@@ -25,6 +25,14 @@ recipe "jenkins::do_attach_slave_at_boot",
 
 # Server/Master Attributes
 
+attribute "jenkins/server/home",
+  :display_name => "Directory where Jenkins builds will take place",
+  :description => "All builds will take place here",
+  :required => "suggested",
+  :recipes => [ "jenkins::default", "jenkins::install_server", 
+    "jenkins::do_attach_request", "jenkins::do_attach_slave_at_boot" ],
+  :default => "/mnt/ephemeral"
+
 attribute "jenkins/server/user_name",
   :display_name => "Jenkins User Name",
   :description =>

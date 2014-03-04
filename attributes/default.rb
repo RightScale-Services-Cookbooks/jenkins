@@ -18,7 +18,7 @@ else
   default[:jenkins][:ip] = "127.0.0.1"
 end
 # Jenkins server home
-default[:jenkins][:server][:home] = "/var/lib/jenkins"
+#default[:jenkins][:server][:home] = "/var/lib/jenkins"
 # Jenkins system user
 default[:jenkins][:server][:system_user] = "root"
 # Jenkins system group
