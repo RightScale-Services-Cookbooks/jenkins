@@ -18,7 +18,8 @@ Please see the `metadata.rb` for the latest dependencies.
 
 Jenkins currently runs as root user. This is required for using the
 VirtualMonkey test framework. Once the test framework is fixed to run as a
-regular user, this limitation can be removed.
+regular user, this limitation can be removed. Jenkins version 1.500 required to have
+master-slave work properly. The following versions also work: 1.520, 1.525, 1.535
 
 ## SETUP/USAGE:
 

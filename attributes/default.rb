@@ -60,6 +60,6 @@ default[:jenkins][:server][:password] = ""
 #
 
 # Jenkins version to install
-default[:jenkins][:server][:version] = ""
+default[:jenkins][:server][:version] = "1.500"
 # Jenkins plugins to install
 default[:jenkins][:server][:plugins] = ""
