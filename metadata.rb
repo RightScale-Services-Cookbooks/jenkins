@@ -77,7 +77,7 @@ attribute "jenkins/server/version",
     "Jenkins version to install. Default 1.500. Following also work 1.520, 1.525, 1.535" +
     " Example: 1.500",
   :required => "optional",
-  :default => "1.500"
+  :default => "1.500",
   :recipes => ["jenkins::default", "jenkins::install_server"]
 
 attribute "jenkins/server/plugins",
