@@ -80,6 +80,13 @@ attribute "jenkins/server/version",
   :default => "1.500",
   :recipes => ["jenkins::default", "jenkins::install_server"]
 
+attribute "jenkins/ip",
+  :display_name => "IP address to listen on",
+  :description => "IP address for Jenkins to listen on",
+  :require => "required",
+  :choices => ["public ip", "private ip", "localhost"],
+  :recipes => [ "jenkins::default", "jenkins_install_server" ]
+
 attribute "jenkins/server/plugins",
   :display_name => "Jenkins Plugins",
   :description =>

@@ -11,12 +11,6 @@
 
 # Attributes for Jenkins master
 
-# To support running the use of this cookbook inside a Vagrant box
-if node[:cloud]
-  default[:jenkins][:ip] = node[:cloud][:public_ips][0]
-else
-  default[:jenkins][:ip] = "127.0.0.1"
-end
 # Jenkins server home
 #default[:jenkins][:server][:home] = "/var/lib/jenkins"
 # Jenkins system user

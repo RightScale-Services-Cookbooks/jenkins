@@ -10,6 +10,14 @@ rightscale_marker
 
 require "jenkins_api_client"
 
+if node[:jenkins][:ip] == "public ip"
+  jenkins_ip_address = node[:cloud][:public_ips][0]
+elsif node[:jenkins][:ip] == "private ip"
+  jenkins_ip_address = node[:cloud][:private_ips][0]
+else
+  jenkins_ip_address = "127.0.0.1"
+end
+
 # Add the jenkins public key to allow master to connect to the slave
 execute "add jenkins public key to authorized keys" do
   command "echo \"#{node[:jenkins][:public_key]}\"" +
@@ -78,4 +86,4 @@ end
 right_link_tag "jenkins:slave=true"
 right_link_tag "jenkins:slave_name=#{node[:jenkins][:slave][:name]}"
 right_link_tag "jenkins:slave_mode=#{node[:jenkins][:slave][:mode]}"
-right_link_tag "jenkins:slave_ip=#{node[:jenkins][:ip]}"
+right_link_tag "jenkins:slave_ip=#{jenkins_ip_address}"

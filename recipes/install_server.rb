@@ -6,7 +6,13 @@
 # http://www.rightscale.com/terms.php and, if applicable, other agreements
 # such as a RightScale Master Subscription Agreement.
 
-rightscale_marker
+if node[:jenkins][:ip] == "public ip"
+  jenkins_ip_address = node[:cloud][:public_ips][0]
+elsif node[:jenkins][:ip] == "private ip"
+  jenkins_ip_address = node[:cloud][:private_ips][0]
+else
+  jenkins_ip_address = "127.0.0.1"
+end
 
 # Create the home directory for Jenkins.
 directory node[:jenkins][:server][:home] do
@@ -161,5 +167,5 @@ sys_firewall "8080"
 
 right_link_tag "jenkins:active=true"
 right_link_tag "jenkins:master=true"
-right_link_tag "jenkins:listen_ip=#{node[:jenkins][:ip]}"
+right_link_tag "jenkins:listen_ip=#{jenkins_ip_address}"
 right_link_tag "jenkins:listen_port=#{node[:jenkins][:server][:port]}"
