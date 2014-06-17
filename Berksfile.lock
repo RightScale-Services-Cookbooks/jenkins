@@ -1,0 +1,52 @@
+DEPENDENCIES
+  cloudmonitoring
+    git: git://github.com/rightscale/rackspace_cookbooks.git
+    revision: 8b3c5b8678b462ba7980de6919f0c6a0ac9777a0
+    rel: cloudmonitoring
+  driveclient
+    git: git://github.com/rightscale/rackspace_cookbooks.git
+    revision: 8b3c5b8678b462ba7980de6919f0c6a0ac9777a0
+    rel: driveclient
+  nbc_jenkins
+    path: .
+    metadata: true
+  rightscale
+    git: git://github.com/rightscale/rightscale_cookbooks.git
+    revision: 2cb843f6ef60e72c4f39c6b944ddcaf1d7b7097f
+    rel: cookbooks/rightscale
+  sys
+    git: git://github.com/rightscale/rightscale_cookbooks.git
+    revision: 2cb843f6ef60e72c4f39c6b944ddcaf1d7b7097f
+    rel: cookbooks/sys
+  sys_firewall
+    git: git://github.com/rightscale/rightscale_cookbooks.git
+    revision: 2cb843f6ef60e72c4f39c6b944ddcaf1d7b7097f
+    rel: cookbooks/sys_firewall
+  sysctl
+    git: git://github.com/rs-services/cookbooks_internal.git
+    revision: 8606cbcd81c37d5ced7fb7e8fd85870b9d7517d1
+    rel: cookbooks/sysctl
+
+GRAPH
+  apt (2.4.0)
+  cloudmonitoring (0.1.5)
+  driveclient (1.0.0)
+    apt (>= 0.0.0)
+    yum (>= 0.0.0)
+  iptables (0.13.2)
+  logrotate (1.6.0)
+  nbc_jenkins (13.5.1)
+    logrotate (>= 0.0.0)
+    rightscale (>= 0.0.0)
+    sys_firewall (>= 0.0.0)
+  rightscale (13.5.0)
+    cloudmonitoring (>= 0.0.0)
+    driveclient (>= 0.0.0)
+  sys (13.5.0)
+    rightscale (>= 0.0.0)
+  sys_firewall (13.5.0)
+    iptables (>= 0.0.0)
+    rightscale (>= 0.0.0)
+    sys (>= 0.0.0)
+  sysctl (0.0.1)
+  yum (3.2.2)
